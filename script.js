@@ -18,10 +18,11 @@ let date = "";
 let rate = "";
 
 database.ref().on("child_added", function (snapshot) {
-    let dude = snapshot.val();
+    let dude = snapshot.val();;
     console.log(dude);
+    let months = 5;
+    //use moment to get months past from dude.date here
 
-    let months = 0;
 
 
     let newRow = $("<tbody>");
@@ -34,11 +35,11 @@ database.ref().on("child_added", function (snapshot) {
     let newDate = $("<td>")
     newDate.text(dude.date);
     let newMonths = $("<td>");
-    newMonths.text(1)
+    newMonths.text(months)
     let newRate = $("<td>")
     newRate.text(dude.rate);
     let newPaid = $("<td>");
-    newPaid.text(1)
+    newPaid.text(months*dude.rate);
 
     newTR.append(newName);
     newTR.append(newRole);
