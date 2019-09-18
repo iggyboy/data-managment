@@ -21,7 +21,7 @@ database.ref().on("child_added", function (snapshot) {
     let dude = snapshot.val();;
     console.log(dude);
     let months = 5;
-    //use moment to get months past from dude.date here
+    //use moment to get months past from dude.date here and everything should work
 
 
 
